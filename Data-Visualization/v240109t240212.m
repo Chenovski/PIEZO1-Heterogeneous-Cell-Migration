@@ -4,7 +4,9 @@
 %% 01 [Load Data] pre-set
 
 load_location = ['C:\Users\cjh_m\Desktop\2024_01_09_Heterogeneous_Cell_Migration_Model\' ...
-    '2024_01_29_cko_mix_yoda1'];
+    '2024_02_12_cko_mix_yoda1'];
+% load_location = ['C:\Users\cjh_m\Desktop\2024_01_09_Heterogeneous_Cell_Migration_Model\' ...
+%     '2024_02_12_cko_mix_yoda1_a2a3'];
 phenotype = 'Yoda1';
 load(load_location);
 
@@ -46,6 +48,7 @@ hold off;
 xticks(flip(sp));
 xlabel(x_label);
 ylabel('Norm. Wound Closure');
+% ylim([0 2]);% adjust scale for plotting
 leg1 = legend('\alpha_{uv} = -0.4','\alpha_{uv} = -0.2','\alpha_{uv} = 0', ...
     '\alpha_{uv} = 0.2','\alpha_{uv} = 0.4','\alpha_{uv} = 0.6','Control','Location','best');
 set(leg1,'Box','off')
@@ -74,7 +77,7 @@ ax.FontSize = font_size;
 
 %% 03 [Fig 3] percentage of edge cells
 
-plot_type = 's';
+plot_type = 'a';
 
 if strcmp(plot_type,'a') % a: all
     edge_mean = wrp_average_mean;
@@ -127,9 +130,9 @@ figure(4);
 clf;
 hold on;
 plot(0:0.1:1,0:0.1:1,'--',LineWidth=1);
-errorbar(sp,1-forward_mean(idx,:),forward_sem(idx,:),LineWidth=2);
-errorbar(sp,1-backward_mean(idx,:),backward_sem(idx,:),LineWidth=2);
-errorbar(sp,1-still_mean(idx,:),still_sem(idx,:),LineWidth=2);
+errorbar(sp,1-forward_mean_new(idx,:),forward_sem_new(idx,:),LineWidth=2);
+errorbar(sp,1-backward_mean_new(idx,:),backward_sem_new(idx,:),LineWidth=2);
+errorbar(sp,1-still_mean_new(idx,:),still_sem_new(idx,:),LineWidth=2);
 xticks(flip(sp));
 xlabel(x_label);
 ylabel(y_label);
