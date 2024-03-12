@@ -83,14 +83,14 @@ if strcmp(plot_type,'a') % a: all
     edge_mean = wrp_average_mean;
     edge_sem = wrp_average_sem;
 elseif strcmp(plot_type,'f') % f: forward
-    edge_mean = forward_mean;
-    edge_sem = forward_sem;
+    edge_mean = forward_mean_new;
+    edge_sem = forward_sem_new;
 elseif strcmp(plot_type,'b') % b: backward
-    edge_mean = backward_mean;
-    edge_sem = backward_sem;
+    edge_mean = backward_mean_new;
+    edge_sem = backward_sem_new;
 elseif strcmp(plot_type,'s') % s: still
-    edge_mean = still_mean;
-    edge_sem = still_sem;
+    edge_mean = still_mean_new;
+    edge_sem = still_sem_new;
 end
 
 
